@@ -1,0 +1,6 @@
+{
+    "always": [
+        {"to": "/all", "label": "All Books"},
+        {"to": "/private", "label": "Private Books"}
+    ]
+}

@@ -1,26 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Navigator, { RouteType } from './navigators/Navigator';
+import routesConfig from './config/routes-config.json'
+import AllBooks from './pages/AllBooks';
+import PrivateBooks from './pages/PrivateBooks';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const {always} = routesConfig;
+
+function getRoutes(): RouteType[] {
+  const res: RouteType[] = [];
+  res.push(...always);
+  return res;
+}
+
+const App: React.FC = () => {
+
+  const routes = getRoutes();
+
+
+  return <BrowserRouter>
+    <Routes>
+        <Route path='/' element={<Navigator routes={routes}/>}>
+          <Route path='all' element={<AllBooks/>}/>
+          <Route path='private' element={<PrivateBooks/>}/>
+
+        </Route>
+  
+
+    </Routes>
+  
+  </BrowserRouter>
 }
 
 export default App;

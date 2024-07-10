@@ -1,0 +1,9 @@
+{
+    "headerConfigAll": "All Books",
+    "headerConfigPrivate": "Private Books",
+    "endpointAll": "",
+    "endpointPrivate": "private",
+    "baseUrl": "https://tdd.demo.reaktivate.com/v1/books/",
+    "ownerPath": "postnikov/",
+    "addButtonName": "Add Book"
+}
